@@ -49,8 +49,14 @@ export default {
     // 根据type渲染单元格Label
     function renderLabel(column, columnIndex) {
       if (this.isSelectionCell(this.table, columnIndex)) {
-        const allCheck = this.table.bodyData.every(row => row._isChecked);
-        const indeterminate = !allCheck && this.table.bodyData.some(row => row._isChecked);
+        // 增加检查是否有数据
+        const hasData = this.table.bodyData.length > 0;
+        // const allCheck = this.table.bodyData.every(row => row._isChecked);
+        // const indeterminate = !allCheck && this.table.bodyData.some(row => row._isChecked);
+        // 无数据时强制为 false
+        const allCheck = hasData ? this.table.bodyData.every(row => row._isChecked) : false;
+        const indeterminate = hasData && !allCheck
+          && this.table.bodyData.some(row => row._isChecked);         
         return <Checkbox
           indeterminate={ indeterminate }
           value={ allCheck }

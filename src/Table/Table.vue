@@ -301,6 +301,8 @@
         deep: true,
         handler() {
           Object.assign(this.$data, initialState(this));
+          //  动态添加checkbox，expandtype以及index列时需要重新初始化列
+          this.measure();
         },
       },
     },
