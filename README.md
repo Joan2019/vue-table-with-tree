@@ -11,20 +11,20 @@
 Use npm:
 
 ```shell
-npm i vue-table-with-tree-grid -S
+npm i vue-table-with-tree -S
 ```
 
 Or use yarn:
 
 ```shell
-yarn add vue-table-with-tree-grid
+yarn add vue-table-with-tree
 ```
 
 ## Usage
 
 ```javascript
 import Vue from 'vue'
-import ZkTable from 'vue-table-with-tree-grid'
+import ZkTable from 'vue-table-with-tree'
 
 Vue.use(ZkTable)
 ```
@@ -33,7 +33,7 @@ Or
 
 ```javascript
 import Vue from 'vue'
-import ZkTable from 'vue-table-with-tree-grid'
+import ZkTable from 'vue-table-with-tree'
 
 Vue.component(ZkTable.name, ZkTable)
 ```

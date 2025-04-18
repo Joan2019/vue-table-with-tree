@@ -56,7 +56,7 @@ export default {
         // 无数据时强制为 false
         const allCheck = hasData ? this.table.bodyData.every(row => row._isChecked) : false;
         const indeterminate = hasData && !allCheck
-          && this.table.bodyData.some(row => row._isChecked);         
+          && this.table.bodyData.some(row => row._isChecked);
         return <Checkbox
           indeterminate={ indeterminate }
           value={ allCheck }
